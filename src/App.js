@@ -1,12 +1,12 @@
 
 import GlobalStyle from "./Styles/global";
-
+import RoutesApp from "./Routes/Index";
+import Home from "./Pages/Home/Index";
 
 function App() {
   return (
     <div className="App">
-      <GlobalStyle />
-      <h1>TESTE</h1>
+      <RoutesApp />
     </div>
   );
 }

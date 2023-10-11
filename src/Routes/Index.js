@@ -4,11 +4,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signin from "../Pages/Signin/Index";
 import Signup from "../Pages/Signup/Index";
 import Home from "../Pages/Home/Index"
+import useAuth from "../hooks/useAuth"; //Vai pegar do nosso contexto de o usuário está logado ou não 
+
 
 //Novo componente Privatre, que estou passando o Home para a prop dele 
 const Private = ({ Item }) => {
-  const signed = true;
-  console.log(signed) 
+  const { signed } = useAuth();
+  // console.log(signed) 
   //Se estiver logado, vai passar a Home, se não parra o Signin
   return signed ? <Item /> : <Signin />;
 

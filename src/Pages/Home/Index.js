@@ -1,10 +1,21 @@
 import React from 'react'
+import Button from '../../components/Button/Index';
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
+import * as C from "./style";
+
 
 const Home = () => {
+  const { signout } = useAuth();
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <C.Container>
+      <C.Title>Home</C.Title>
+      <Button Text="Sair" onClick={() => [signout(), navigate("/")]}>
+        Sair
+      </Button>
+    </C.Container>
   );
 };
 
